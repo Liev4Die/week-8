@@ -7,12 +7,12 @@ var totalfris    = 0;
 var balschalen8  = 0;
 var balschalen16 = 0;
 
-const bierprijs  = 1.99
-const wijnprijs  = 1.99
-const frisprijs  = 1.00
-const bal8prijs  = 3.00
-const bal16prijs = 4.99
-
+const bierprijs  = 1.99;
+const wijnprijs  = 1.99;
+const frisprijs  = 1.00;
+const bal8prijs  = 3.00;
+const bal16prijs = 4.99;
+3
 function order() {
 	while ((order = prompt('Welke bestelling wilt u toevoegen?\nfris, bier, wijn of snacks')) !== 'stop'){ 
 		if (order === 'fris'){    
@@ -81,7 +81,10 @@ function prices(){
 
 function bonnetje(){
 
-  document.writeln('<h1>Drankjes</h1> <br />')
+  if (totalbier > 0 || totalfris > 0 || totalwijn > 0) {
+  	document.writeln('<h1>Drankjes</h1> <br />')
+  } 
+  
 
 	if (totalbier > 0){
 		document.writeln('Aantal bier: ' + totalbier + '<br />')		
@@ -98,7 +101,12 @@ function bonnetje(){
 		document.writeln('Prijs per stuk: &#8364;' + wijnprijs + '<br />');
 		document.writeln('Totaal prijs: &#8364;' + wijntotalprice.toFixed(2) + '<br /><br />');
 	}
-  document.writeln('<h1>Snacks</h1> <br />')
+
+
+  if (balschalen8 > 0 || balschalen16 > 0) {
+  	document.writeln('<h1>Snacks</h1> <br />')
+  } 
+  
 
 	if (balschalen8 > 0){
 		document.writeln('Aantal bitterballen: ' + balschalen8 + ' schalen van 8 bitterballen <br />')		
